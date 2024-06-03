@@ -8,6 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from config import config
 from database import Base, engine
 from service.user import user_router
+from service.ai import ai_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -27,6 +28,7 @@ if not os.path.exists("./avatar/"):
 app.mount("/avatar", StaticFiles(directory="avatar"), name="avatar")
 app.mount("/upload", StaticFiles(directory="upload"), name="upload")
 app.include_router(user_router, prefix="/user")
+app.include_router(ai_router, prefix="/ai")
 
 
 

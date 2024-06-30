@@ -1,7 +1,9 @@
 import erniebot
 from pydantic import BaseModel
-erniebot.api_type = 'aistudio'
-erniebot.access_token = '3bcdec65369d7661129d1dd75c16d8b9e68352dd'
+from config import config
+erniebot.api_type = config.erniebot_api_type
+erniebot.access_token = config.erniebot_access_token
+
 
 model = 'ernie-3.5'
 prompt = """

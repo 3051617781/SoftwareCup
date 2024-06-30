@@ -28,6 +28,11 @@ class Config(BaseSettings):
     email_smtp_user: str = ""
     email_smtp_password: str = ""
 
+    erniebot_api_type: str = 'aistudio'
+    erniebot_access_token: str = ''
+
+    doc_file_path: str = ''
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
 
